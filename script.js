@@ -1,5 +1,3 @@
-const divGrid = document.querySelector(".grid");
-
 function generateGrid(length,oldSquares=[]){
     //remove old grid if arg is passed
     oldSquares.forEach(square=>(divGrid.removeChild(square)));
@@ -16,6 +14,13 @@ function generateGrid(length,oldSquares=[]){
     return gridSquares;
 }
 function replaceSquareColor(){
-    this.style.setProperty('background','#525252');
+    this.style.setProperty('background',colorPicked);
 }
-let g = generateGrid(32);
+function getPickedColor(event){
+    colorPicked = event.target.value;
+}
+const divGrid = document.querySelector(".grid");
+const inputColorPicker = document.querySelector("input[type='color']");
+inputColorPicker.addEventListener("change",getPickedColor)
+let colorPicked = "#525252"
+const currentSquares = generateGrid(32);
