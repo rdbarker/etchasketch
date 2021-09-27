@@ -16,6 +16,6 @@ function generateGrid(length,oldSquares=[]){
     return gridSquares;
 }
 function replaceSquareColor(){
-    this.style.setProperty('background','black');
+    this.style.setProperty('background','#525252');
 }
-let g = generateGrid(16);
+let g = generateGrid(32);
