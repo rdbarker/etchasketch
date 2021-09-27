@@ -1,4 +1,12 @@
+.grid{
+    display: grid;
+    background:rgba(182, 182, 182, 0.897);
+    grid-template-columns: repeat(4,1fr);
+    gap: 1px;
+    padding: 1px;
+    width: 640px;
+    height: 640px;
+}
 .square{
-    width: 64px;
-    height: 64px;
+    background: indianred;
 }

@@ -1,13 +1,14 @@
 const divGrid = document.querySelector(".grid");
-let gridArray = [];
-
-function generateGrid(length,width){
-    const area = length * width;
+function generateGrid(length){
+    const area = length * length;
+    const gridSquares = [];
     for (let i = 0; i<area; i++){
         const elementCreated = document.createElement('div');
         elementCreated.classList.add('square');
         divGrid.appendChild(elementCreated);
+        gridSquares.push(elementCreated);
     }
+    return gridSquares;
 }
-
-generateGrid(4,4);
+//function replaceColor()
+generateGrid(4);
