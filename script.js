@@ -19,6 +19,11 @@ function replaceSquareColor(){
 function getPickedColor(event){
     colorPicked = event.target.value;
 }
+function updateGrid(event){
+    gridSize = event.target.value;
+    currentSquares = generateGrid();
+    document.querySelector('.grid-value').textContent = gridSize;
+}
 let colorPicked = "#525252";
 let gridSize = 32;
 let currentSquares = [];
@@ -28,5 +33,7 @@ const inputColorPicker = document.querySelector("input[type='color']");
 const buttonErase = document.querySelector(".erase > button");
 inputColorPicker.addEventListener("change",getPickedColor);
 buttonErase.addEventListener("click",e => (currentSquares = generateGrid(gridSize,currentSquares)));
+const gridInput = document.querySelector("input[type='range']");
+gridInput.addEventListener("input",updateGrid);
 
 currentSquares = generateGrid();
