@@ -1,4 +1,5 @@
 const divGrid = document.querySelector(".grid");
+
 function generateGrid(length,oldSquares=[]){
     //remove old grid if arg is passed
     oldSquares.forEach(square=>(divGrid.removeChild(square)));
@@ -9,9 +10,12 @@ function generateGrid(length,oldSquares=[]){
         const elementCreated = document.createElement('div');
         elementCreated.classList.add('square');
         divGrid.appendChild(elementCreated);
+        elementCreated.addEventListener("mouseenter",replaceSquareColor)
         gridSquares.push(elementCreated);
     }
     return gridSquares;
 }
-//function replaceColor()
-let g = generateGrid(4);
+function replaceSquareColor(){
+    this.style.setProperty('background','black');
+}
+let g = generateGrid(16);

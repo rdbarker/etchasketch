@@ -1,12 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwigley&display=swap');
+body{
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    height: 100vh;
+    margin: 0;
+}
+.container{
+    background-color: #ff3939;
+    padding: 0 80px 0 80px;
+    border-radius: 12px;
+}
 .grid{
     display: grid;
     background:rgba(182, 182, 182, 0.897);
-    /*grid-template-columns: repeat(4,1fr);*/
     gap: 1px;
     padding: 1px;
     width: 640px;
     height: 640px;
+    cursor: crosshair;
 }
 .square{
-    background: indianred;
+    background: rgb(204, 204, 204);
+}
+.title{
+    font-family: 'Qwigley', cursive;
+    height: 72px;
+    padding-top: 8px;
+    font-size: 80px;
+    font-weight: 900;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.controls{
+    height: 80px;
 }
