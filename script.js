@@ -1,9 +1,9 @@
-function generateGrid(length,oldSquares=[]){
+function generateGrid(){
     //remove old grid if arg is passed
-    oldSquares.forEach(square=>(divGrid.removeChild(square)));
-    const area = length * length;
+    currentSquares.forEach(square=>(divGrid.removeChild(square)));
+    const area = gridSize * gridSize;
     const gridSquares = [];
-    divGrid.style.setProperty('grid-template-columns',`repeat(${length} ,1fr)`);
+    divGrid.style.setProperty('grid-template-columns',`repeat(${gridSize} ,1fr)`);
     for (let i = 0; i<area; i++){
         const elementCreated = document.createElement('div');
         elementCreated.classList.add('square');
@@ -19,8 +19,14 @@ function replaceSquareColor(){
 function getPickedColor(event){
     colorPicked = event.target.value;
 }
+let colorPicked = "#525252";
+let gridSize = 32;
+let currentSquares = [];
+
 const divGrid = document.querySelector(".grid");
 const inputColorPicker = document.querySelector("input[type='color']");
-inputColorPicker.addEventListener("change",getPickedColor)
-let colorPicked = "#525252"
-const currentSquares = generateGrid(32);
+const buttonErase = document.querySelector(".erase > button");
+inputColorPicker.addEventListener("change",getPickedColor);
+buttonErase.addEventListener("click",e => (currentSquares = generateGrid(gridSize,currentSquares)));
+
+currentSquares = generateGrid();

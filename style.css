@@ -42,6 +42,20 @@ body{
 .controls{
     height: 80px;
     width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls-text{
+    margin: 0 6px;
+    color: #e0e0e0b5;
+    font-size: 18px;
+}
+.controls-color{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
 }
 .color-picker{
     height: 60px;
@@ -49,10 +63,20 @@ body{
     overflow: hidden;
     border-radius: 100%;
     border: 6px solid rgb(247, 247, 247);
-    margin-left: 8px;
 }
+
 input[type="color"]{
     width: 100%;
     height: 100%;
     transform: scale(1.5);
+}
+.erase > button{
+    border: none;
+    background-color: inherit;
+    color: gold;
+    font-size: 32px;
+    color: #e0e0e0b5;
+}
+.grid-picker{
+    width: 200px;
 }
